@@ -192,7 +192,7 @@ pub const Cuda = enum {
     }
 
     pub fn cudnn_is_available() bool {
-        return c.atc_cudnn_is_available();
+        return c.atc_cudnn_is_available() != 0;
     }
 
     pub fn manualSeed(seed: u64) void {
@@ -208,7 +208,7 @@ pub const Cuda = enum {
     }
 
     pub fn userEnabledCudnn() bool {
-        return c.atc_user_enabled_cudnn();
+        return c.atc_user_enabled_cudnn() != 0;
     }
 
     pub fn setUserEnabledCudnn(b: bool) void {
